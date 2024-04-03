@@ -32,10 +32,11 @@ task clean(type: Delete) {
 
 //ifconfig en0 | grep inet | grep -v inet6 | cut -d ' ' -f2
 def getLocalIPv4() {
-    def p = "ifconfig en0".execute() |
-            "grep inet".execute() |
-            "grep -v inet6".execute() |
-            ["cut", "-d", " ", "-f2"].execute()
-    p.waitFor()
-    return p.text.trim()
+//    def p = "ifconfig en0".execute() |
+//            "grep inet".execute() |
+//            "grep -v inet6".execute() |
+//            ["cut", "-d", " ", "-f2"].execute()
+//    p.waitFor()
+//    return p.text.trim()
+    return '192.168.1.159'
 }

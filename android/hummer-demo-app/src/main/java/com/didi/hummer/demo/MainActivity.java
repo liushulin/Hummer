@@ -3,6 +3,7 @@ package com.didi.hummer.demo;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -41,6 +42,7 @@ public class MainActivity extends Activity {
     }
 
     private void loadScripts() {
+        Log.d("TempLog",Constant.HOST + "fileList");
         NetworkUtil.httpGet(Constant.HOST + "fileList", (HttpCallback<HttpResponse<List<String>>>) response -> {
             if (response.error != null && response.error.code != 0) {
                 return;
