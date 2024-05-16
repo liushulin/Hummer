@@ -34,6 +34,7 @@ public interface IObjectOperator {
 
     void set(String key, JSCallback value);
 
+    //Object... params 这种可扩展参数（也称为可变参数）语法在 Java 1.5（也被称为 Java 5）中引入，并且在 Java 1.8（也被称为 Java 8）以及后续版本中都是支持的
     Object callFunction(String funcName, Object... params);
 
 }

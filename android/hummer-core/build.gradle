@@ -1,6 +1,8 @@
 apply plugin: 'com.android.library'
+//这行代码从父目录的module.gradle文件中应用构建逻辑。
+// apply from用于导入外部构建脚本。在这种情况下，它可能是为了重用或共享一些构建配置或任务定义。
 apply from: '../module.gradle'
-apply from: '../upload.gradle'
+//apply from: '../upload.gradle'
 
 if (project.COMPILE_JS_ENGINE == 'All') {
     apply from: 'fetch_jsc_libs.gradle'

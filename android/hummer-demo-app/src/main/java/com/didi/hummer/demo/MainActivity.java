@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
+import com.didi.hummer.HummerSDK;
 import com.didi.hummer.adapter.http.HttpCallback;
 import com.didi.hummer.adapter.http.HttpResponse;
 import com.didi.hummer.adapter.navigator.NavPage;
@@ -42,7 +43,7 @@ public class MainActivity extends Activity {
     }
 
     private void loadScripts() {
-        Log.d("TempLog",Constant.HOST + "fileList");
+        Log.d(HummerSDK.UnicomTag,Constant.HOST + "fileList");
         NetworkUtil.httpGet(Constant.HOST + "fileList", (HttpCallback<HttpResponse<List<String>>>) response -> {
             if (response.error != null && response.error.code != 0) {
                 return;

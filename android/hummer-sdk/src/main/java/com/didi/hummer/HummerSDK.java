@@ -36,6 +36,12 @@ import java.util.Map;
  */
 public class HummerSDK {
 
+    //自定义日志tag
+    public static String UnicomTag = "UnicomTag";
+
+    /**
+     * 定义一个注解JsEngine
+     */
     @IntDef({JsEngine.JSC, JsEngine.QUICK_JS, JsEngine.V8, JsEngine.HERMES, JsEngine.NAPI_QJS, JsEngine.NAPI_HERMES})
     @Retention(RetentionPolicy.SOURCE)
     public @interface JsEngine {
@@ -54,6 +60,9 @@ public class HummerSDK {
 
     public static Context appContext;
 
+    /**
+     * @JsEngine 是一个注解，用于限制 jsEngine 字段的值只能是 JsEngine 注解中定义的几个整数常量之一。这些常数代表了不同的 JavaScript 引擎类型。
+     */
     private static @JsEngine int jsEngine = JsEngine.NAPI_QJS;
 
     private static volatile boolean isInited;

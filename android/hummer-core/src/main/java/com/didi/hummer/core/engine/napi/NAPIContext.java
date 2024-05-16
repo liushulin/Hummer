@@ -42,6 +42,14 @@ public class NAPIContext extends NAPIValue implements JSContext {
         return evaluateJavaScript(script, "");
     }
 
+    /**
+     * evaluateJavaScript方法中，如果scriptId为空，则直接执行脚本；
+     * 如果scriptId不为空，则先判断缓存中是否存在字节码，如果不存在，则编译脚本生成字节码，并放入缓存中；
+     * 如果存在，则直接执行字节码。
+     * @param script
+     * @param scriptId
+     * @return
+     */
     @MainThread
     @Override
     public Object evaluateJavaScript(String script, String scriptId) {

@@ -10,6 +10,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by XiaoFeng on 2021/6/29.
+ * 主要用于Java和JavaScript之间的交互，特别是通过JNI（Java Native Interface）调用本地的JavaScript引擎
  */
 public class JSEngine {
 

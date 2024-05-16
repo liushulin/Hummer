@@ -47,22 +47,22 @@ android {
 //    commandLine 'sh', '../openTerminal.sh'
 //}
 // 编译前执行启动JS文件服务器脚本，用于下载js文件
-task startRemoteSrv(type: Exec) {
-    workingDir "$projectDir"
-    if (System.properties['os.name'].toLowerCase().contains('windows')) {
-        // 如果是Windows系统，使用指定路径下的 Git Bash 执行 Shell 脚本
-        commandLine 'C:\\Program Files\\Git\\git-bash.exe', '--cd=..', '../openTerminal.sh'
-    } else {
-        // 如果是Unix系统，使用sh执行Shell脚本
-        commandLine 'sh', '../openTerminal.sh'
-    }
-}
+//task startRemoteSrv(type: Exec) {
+//    workingDir "$projectDir"
+//    if (System.properties['os.name'].toLowerCase().contains('windows')) {
+//        // 如果是Windows系统，使用指定路径下的 Git Bash 执行 Shell 脚本
+//        commandLine 'C:\\Program Files\\Git\\git-bash.exe', '--cd=..', '../openTerminal.sh'
+//    } else {
+//        // 如果是Unix系统，使用sh执行Shell脚本
+//        commandLine 'sh', '../openTerminal.sh'
+//    }
+//}
 
 
 
 
 //assemble.dependsOn(startRemoteSrv)
-preBuild.dependsOn(startRemoteSrv)
+//preBuild.dependsOn(startRemoteSrv)
 
 configurations.all {
     resolutionStrategy.cacheChangingModulesFor 0, 'seconds'

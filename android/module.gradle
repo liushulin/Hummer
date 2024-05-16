@@ -21,15 +21,18 @@ android {
     }
 
     lintOptions {
+        // 如果设置为true，Lint发现错误时会中止构建。这里设置为false，表示Lint发现错误时不会中止构建。
         abortOnError false
     }
 
     compileOptions {
-        sourceCompatibility = SOURCE_COMPATIBILITY
-        targetCompatibility = TARGET_COMPATIBILITY
+        sourceCompatibility = SOURCE_COMPATIBILITY //设置Java源代码的兼容性版本
+        targetCompatibility = TARGET_COMPATIBILITY //设置Java字节码的目标版本。
     }
 }
 
+//这个闭包用于遍历项目中定义的所有配置，并对它们应用相同的解析策略。
 configurations.all {
+    //设置缓存变化模块的时长。这里设置为0秒，意味着不缓存变化模块。这通常用于防止Gradle在构建过程中缓存那些经常变化的依赖项。
     resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
 }
